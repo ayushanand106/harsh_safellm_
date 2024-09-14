@@ -94,14 +94,14 @@ def download_images(df, download_folder, allow_multiprocessing=True):
             download_status[filename] = [entity_name, entity_value]
 
     # Save the download status dictionary as a JSON file
-    with open("/media/mlr_lab/325C37DE7879ABF2/AyushAnand/ml_challenge/"+'download_status_train.json', 'w') as f:
+    with open('download_status_train.json', 'w') as f:
         json.dump(download_status, f, indent=2)
 
     return download_status
 
 if __name__ == "__main__":
-    df = pd.read_csv("/media/mlr_lab/325C37DE7879ABF2/AyushAnand/ml_challenge/66e31d6ee96cd_student_resource_3/student_resource_3/dataset/train.csv")
-    links = df["image_link"].tolist()
-    download_status = download_images(df, "/media/mlr_lab/325C37DE7879ABF2/AyushAnand/ml_challenge/training")
+    df = pd.read_csv("/66e31d6ee96cd_student_resource_3/student_resource_3/dataset/train.csv")
+    # links = df["image_link"].tolist()
+    download_status = download_images(df, "/training")
     print(download_status)
     print("Download completed. Status saved in download_status.json")
