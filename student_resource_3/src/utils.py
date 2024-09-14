@@ -100,7 +100,7 @@ def download_images(df, download_folder, allow_multiprocessing=True):
     return download_status
 
 if __name__ == "__main__":
-    df = pd.read_csv("/student_resource_3/dataset/train.csv")
+    df = pd.read_csv("/leonardo_work/EUHPC_E03_068/harsh_safellm_/student_resource_3/dataset/train.csv")
     # links = df["image_link"].tolist()
     download_status = download_images(df, "/training")
     print(download_status)
